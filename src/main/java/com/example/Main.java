@@ -24,41 +24,40 @@ public class Main {
         int i = 0;
 
         do {
-            System.out.println("Scrivi il numero da indovinare, oppuer 'esc' per uscire: ");
+            System.out.println("Scrivi il numero da indovinare, oppuere 'esc' per uscire: ");
             numeroInviato = myScan.nextLine();
             out.writeBytes(numeroInviato + '\n');
 
-            numeroRicevuto = in.readLine();
+            numeroRicevuto = in.readLine(); 
 
             switch (numeroRicevuto) {
                 case "<":
-                    System.out.println("numero troppo piccolo" + '\n');
+                    System.out.println("Numero troppo piccolo" + '\n');
                     i++;
                 break;
 
                 case ">":
-                    System.out.println("numero troppo grande" + '\n');
+                    System.out.println("Numero troppo grande" + '\n');
                     i++;
                 break;
 
                 case "=":
-                    System.out.println("numero indovinato in: " + i + " tentativi" + '\n');
+                    System.out.println("Numero indovinato in: " + i + " tentativi" + '\n');
                 break;
 
                 case "!":
-                    System.out.println("numero più grande di 100" + '\n');
+                    System.out.println("Numero non valido" + '\n');
                 break;
-                    
-                case "!!":
-                    System.out.println("numero più piccolo di 0" + '\n');
-                break;
-            
-                default:
-                    System.out.println("choose not valid" + '\n');
-                    break;
-            }
-             
 
+                case "!!":
+                    System.out.println("Non hai inserito un numero" + '\n');                
+                break;
+                
+                default:
+                    System.out.println("Choose not valid" + '\n');
+                break;
+            }
+            
         } while (!numeroRicevuto.equals("esc"));
         
         server.close();
